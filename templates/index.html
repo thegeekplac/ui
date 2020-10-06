@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+        <table style="width:75%;left:10%;right:10%;" class="alert alert-primary">
+          <tr>
+            <th>val1</th>
+            <th>val2</th>
+            <th>val3</th>
+          </tr>
+        </table>
+    {%for i in range (num)%}
+        <table style="width:75%;left:10%;right:10%;" class="alert alert-primary">
+          <tr>
+            <td>
+                <form method="post"  action="/">
+                    <select name={{"select%s"%((i*3))}}>
+                        <option selected hidden  value={{values["select%s"%((i*3))]}}>{{values["select%s"%((i*3))]}}</option>
+                        <option value="val1">val1</option>
+                        <option value="val2">val2</option>
+                        <option value="val3">val3</option
+                    </select>
+                </form>
+            </td>
+            <td>
+                <form method="post"  action="/">
+                    <select name={{"select%s"%(1+(i*3))}} >
+                        <option   selected hidden value={{values["select%s"%(1+(i*3))]}}>{{values["select%s"%(1+(i*3))]}}</option>
+                        <option value="val1">val1</option>
+                        <option value="val2">val2</option>
+                        <option value="val3">val3</option
+                    </select>
+                </form>
+            </td>
+            <td>
+                <form method="post"  action="/">
+                    <select name={{"select%s"%(2+(i*3))}}>
+                        <option  selected hidden value={{values["select%s"%(2+(i*3))]}} >{{values["select%s"%(2+(i*3))]}}</option>
+                        <option value="val1">val1</option>
+                        <option value="val2">val2</option>
+                        <option value="val3">val3</option
+                    </select>
+                </form>
+            </td>
+          </tr>
+        </table>
+    {%endfor%}
+    <form method="post"  action="/">
+        <input type="submit" value="add" style="margin-left:41%;" name="add"/>
+        <input type="submit" value="remove"  name="remove"/>
+        <input type="submit" value="reset"  name="reset"/>
+        </br>
+        </br>
+        <input type="text" value="email" style="margin-left:40%;" name="email"/>
+        <input type="submit" value="send" name="send"/>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
